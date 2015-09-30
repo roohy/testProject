@@ -2,7 +2,7 @@ var TEMP_PIN = 0;
 TempratureManager = function(){
     prism.core.abstractImplementation.call(this);
     var groveSensor = require('jsupm_grove');
-    var this.sensor = new groveSensor.GroveTemp(TEMP_PIN);
+    this.sensor = new groveSensor.GroveTemp(TEMP_PIN);
 
 };
 TempratureManager.prototype = Object.create(prism.core.abstractImplementation.prototype);
