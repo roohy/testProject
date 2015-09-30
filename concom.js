@@ -8,12 +8,15 @@ prism.core = prism.core || {};
 
 //abstract implementations will should be connected to different components. Define your components here:
 PRISM_PROJECT.components = {
-    'server1': Server,
-    'client1': Client,
+    'lcd': LCDManager,
+    'tempSensor': TempratureManager,
+    'controller': Controller
 };
-PRISM_PROJECT.connectors = ['mainConnector'];
+PRISM_PROJECT.connectors = ['mainBus'];
 PRISM_PROJECT.ports= [
-    ['client1','mainConnector'],
-    ['mainConnector','server1']
+    ['controller','mainBus'],
+    ['mainBus','tempSensor'],
+    ['tempSensor','mainBus'],
+    ['controller', 'lcd']
 ];
 
