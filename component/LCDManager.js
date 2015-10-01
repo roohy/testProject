@@ -22,12 +22,15 @@ LCDManager.prototype.initialize = function(){
     this.display = new i2c.LCD(0);
 };
 LCDManager.prototype.print = function(msg){
+    
 };
 LCDManager.prototype.handle = function(event){
+    console.log("printing");
     if(this.initialized != true)
         this.initialize();
     var operation = event.getParameter('opt');
     if(operation !== 'undefined'){
+        console.log("haha");
         if ( operation == 'print' ){
             var type = event.getParameter('type');
             var value = event.getParameter('value'); 
