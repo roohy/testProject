@@ -17,6 +17,7 @@ PRISM_PROJECT.ports= [
     ['controller','mainBus'],
     ['mainBus','tempSensor'],
     ['tempSensor','mainBus'],
+    ['mainBus','controller'],
     ['controller', 'lcd']
 ];
 

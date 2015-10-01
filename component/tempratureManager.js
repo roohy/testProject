@@ -19,6 +19,7 @@ TempratureManager.prototype.handle = function(event){
         response.addParameter('opt','response');
         response.addParameter('type','Temprature');
         response.addParameter('value',this.sensor.value().toString());
+        response.eventType =  prism.core.prismConstants.REPLY;
         this.send(response);
     }
 };

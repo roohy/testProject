@@ -13,6 +13,7 @@ Controller.prototype.start = function(){
         console.log("getting infromation in control");
         var msg = new prism.core.event('event');
         msg.addParameter('opt','getTemp');
+        msg.eventType = prism.core.prismConstants.REQUEST;
         this.send(msg);
     }.bind(this) , 1000);
 };
@@ -25,6 +26,7 @@ Controller.prototype.handle = function(event){
         var e = new prism.core.event('request');
         e.addParameter('opt','print');
         e.addParameter('type', event.getParameter('type'));
+        response.eventType =  prism.core.prismConstants.REQUEST;
         this.send(response);
     }
 };
