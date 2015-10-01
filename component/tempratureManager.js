@@ -11,8 +11,8 @@ TempratureManager.prototype.constructor = TempratureManager;
 
 
 TempratureManager.prototype.handle = function(event){
-    console.log("haahaaa");
-    console.log(event);
+    //console.log("haahaaa");
+    //console.log(event);
     var opt = event.getParameter('opt');
     if( opt !== 'undefined' && opt == 'getTemp'){
         var response = new prism.core.event("response");

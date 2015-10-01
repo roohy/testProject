@@ -20,7 +20,7 @@ Controller.prototype.start = function(){
 
 
 Controller.prototype.handle = function(event){
-    cosole.log("handling in controller "+event);
+    //cosole.log("handling in controller "+event);
     var opt = event.getParameter('opt');
     if( opt !== 'undefined' && opt == 'response' ){
         var e = new prism.core.event('request');
