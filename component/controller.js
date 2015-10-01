@@ -10,6 +10,7 @@ Controller.prototype = Object.create(prism.core.abstractImplementation.prototype
 Controller.prototype.constructor = Controller;
 Controller.prototype.start = function(){
     setInterval(function(){
+        console.log("getting infromation in control");
         var msg = new prism.core.event('event');
         msg.addParameter('opt','getTemp');
         this.send(msg);
@@ -18,6 +19,7 @@ Controller.prototype.start = function(){
 
 
 Controller.prototype.handle = function(event){
+    cosole.log("handling in controller "+event);
     var opt = event.getParameter('opt');
     if( opt !== 'undefined' && opt == 'response' ){
         var e = new prism.core.event('request');
