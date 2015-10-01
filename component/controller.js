@@ -10,7 +10,7 @@ Controller.prototype = Object.create(prism.core.abstractImplementation.prototype
 Controller.prototype.constructor = Controller;
 Controller.prototype.start = function(){
     setInterval(function(){
-        var msg = new prims.core.event('event');
+        var msg = new prism.core.event('event');
         msg.addParameter('opt','getTemp');
         this.send(msg);
     }.bind(this) , 1000);
