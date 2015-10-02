@@ -26,7 +26,6 @@ LCDManager.prototype.print = function(msg){
 };
 LCDManager.prototype.handle = function(event){
     console.log("printing");
-    this.display.clearScreen();
     if(this.initialized != true)
         this.initialize();
     var operation = event.getParameter('opt');
@@ -34,6 +33,7 @@ LCDManager.prototype.handle = function(event){
         //console.log("haha");
         //console.log(event);
         if ( operation == 'print' ){
+            this.display.clearScreen();
             var type = event.getParameter('type');
             var value = event.getParameter('value'); 
             this.display.setCursor(0,0);
