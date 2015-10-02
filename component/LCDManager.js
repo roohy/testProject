@@ -19,7 +19,7 @@ LCDManager.prototype.initialize = function(){
     }
     
     this.i2c = require('./component/i2c');
-    this.display = new i2c.LCD(0);
+    this.display = new this.i2c.LCD(0);
 };
 LCDManager.prototype.print = function(msg){
     
