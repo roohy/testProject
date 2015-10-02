@@ -26,12 +26,13 @@ LCDManager.prototype.print = function(msg){
 };
 LCDManager.prototype.handle = function(event){
     console.log("printing");
+    this.display.clearScreen();
     if(this.initialized != true)
         this.initialize();
     var operation = event.getParameter('opt');
     if(operation !== 'undefined'){
-        console.log("haha");
-        console.log(event);
+        //console.log("haha");
+        //console.log(event);
         if ( operation == 'print' ){
             var type = event.getParameter('type');
             var value = event.getParameter('value'); 

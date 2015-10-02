@@ -269,6 +269,9 @@ exports.LCD.prototype = {
         this.queue('writeReg', this._rgbBuss, [lcd.regGreen, green], mraa.MRAA_SUCCESS);
         this.queue('writeReg', this._rgbBuss, [lcd.regBlue, blue], mraa.MRAA_SUCCESS);
     },
+    clearScreen: function(){
+        this.i2Cmd (lcd.clearDisplay);
+    },
     /**
      * Write a register
      *
@@ -296,5 +299,5 @@ exports.LCD.prototype = {
     i2Cmd: function(cmd, rgb) {
         this.i2cReg(lcd.cmd, cmd, rgb);
     }
-
+    
 };
