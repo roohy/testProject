@@ -18,6 +18,7 @@ ButtonManager.prototype.startListening=function(){
                 e.addParameter('opt','clicked');
                 e.eventType = prism.core.prismConstants.REPLY;
                 
+        }
         },300);
     }
 };
