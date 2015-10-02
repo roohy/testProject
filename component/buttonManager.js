@@ -4,6 +4,7 @@ ButtonManager = function(){
     var groveSensor = require('jsupm_grove');
     this.sensor = new groveSensor.GroveButton(BTN_PIN);
     this.isListening = false;
+    console.log("behaaaaaaaaaa");
 };
 ButtonManager.prototype = Object.create(prism.core.abstractImplementation.prototype);
 ButtonManager.prototype.constructor = ButtonManager;
