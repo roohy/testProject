@@ -16,6 +16,6 @@ PRISM_PROJECT.maxSize = 100;
 PRISM_PROJECT.name = "The Architecture Name";
 
 //add abstract implementation files
-PRISM_PROJECT.implementations = ['./component/server.js','./component/client.js','./component/tempratureManager.js','./component/controller.js','./component/LCDManager.js'];
+PRISM_PROJECT.implementations = ['./component/server.js','./component/client.js','./component/tempratureManager.js','./component/controller.js','./component/LCDManager.js','./component/buttonManager.js'];
 
 

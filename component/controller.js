@@ -9,6 +9,8 @@ Controller = function(){
 Controller.prototype = Object.create(prism.core.abstractImplementation.prototype);
 Controller.prototype.constructor = Controller;
 Controller.prototype.start = function(){
+    var buttonMsg = new prism.core.event("Button");
+    buttonMsg.addParameter('opt','startButton');
     setInterval(function(){
         console.log("getting infromation in control");
         var msg = new prism.core.event('event');
@@ -29,5 +31,8 @@ Controller.prototype.handle = function(event){
         e.addParameter('value', event.getParameter('value'));
         e.eventType =  prism.core.prismConstants.REQUEST;
         this.send(e);
+    }
+    else if( opt !== 'undefined' && opt == 'clicked'){
+        console.log("clickeddd");
     }
 };
