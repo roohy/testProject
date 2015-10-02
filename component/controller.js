@@ -26,6 +26,7 @@ Controller.prototype.handle = function(event){
         var e = new prism.core.event('request');
         e.addParameter('opt','print');
         e.addParameter('type', event.getParameter('type'));
+        e.addParameter('value', event.getParameter('value'));
         e.eventType =  prism.core.prismConstants.REQUEST;
         this.send(e);
     }
