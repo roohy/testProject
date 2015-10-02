@@ -18,7 +18,7 @@ LCDManager.prototype.initialize = function(){
         console.log('meaa version(' + version + ') is old - this code may not work');
     }
     
-    this.i2c = require('./i2c');
+    this.i2c = require('./component/i2c');
     this.display = new i2c.LCD(0);
 };
 LCDManager.prototype.print = function(msg){
