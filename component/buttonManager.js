@@ -14,6 +14,7 @@ ButtonManager.prototype.startListening=function(){
         this.funcHandle = setInterval(function(){
             var value = this.sensor.value();
             if ( value == 1 ){
+                console.log("clicked!!!!");
                 var e = new prism.core.event("clicked");
                 e.addParameter('opt','clicked');
                 e.eventType = prism.core.prismConstants.REPLY;
