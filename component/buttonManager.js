@@ -32,6 +32,7 @@ ButtonManager.prototype.stopListening = function(){
 ButtonManager.prototype.handle = function(event){
     var type = event.getParameter("opt");
     if ( type !== 'undefined' && type == 'startButton'){
+        console.log("starting the button");
         this.startListening();
     }
 };
