@@ -31,6 +31,7 @@ LCDManager.prototype.handle = function(event){
     var operation = event.getParameter('opt');
     if(operation !== 'undefined'){
         console.log("haha");
+        console.log(event);
         if ( operation == 'print' ){
             var type = event.getParameter('type');
             var value = event.getParameter('value'); 
