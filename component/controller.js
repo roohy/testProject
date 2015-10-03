@@ -19,7 +19,13 @@ Controller.prototype.start = function(){
         msg.addParameter('opt','getTemp');
         msg.eventType = prism.core.prismConstants.REQUEST;
         this.send(msg);
-    }.bind(this) , 1000);
+    }.bind(this) , 10000);
+    setInterval(function(){
+        var msg = new prism.core.event('event');
+        msg.addParameter('opt','getPPM');
+        msg.eventType = prism.core.prismConstants.REQUEST;
+        this.send(msg);
+    }.bind(this) , 10000);
 };
 
 

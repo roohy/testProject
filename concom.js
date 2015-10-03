@@ -11,7 +11,8 @@ PRISM_PROJECT.components = {
     'lcd': LCDManager,
     'tempSensor': TempratureManager,
     'controller': Controller,
-    'button': ButtonManager
+    'button': ButtonManager,
+    'air': AirManager
 };
 PRISM_PROJECT.connectors = ['mainBus'];
 PRISM_PROJECT.ports= [
@@ -20,6 +21,7 @@ PRISM_PROJECT.ports= [
     ['tempSensor','mainBus'],
     ['mainBus','controller'],
     ['controller', 'lcd'],
-    ['mainBus','button']
+    ['mainBus','button'],
+    ['mainBus','air']
 ];
 
