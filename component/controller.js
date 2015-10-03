@@ -1,6 +1,7 @@
 /**
  * Created by Ruhollah on 7/13/2015.
  */
+//var List = ['Temprature
 Controller = function(){
     prism.core.abstractImplementation.call(this);
     
@@ -13,13 +14,13 @@ Controller.prototype.start = function(){
     buttonMsg.addParameter('opt','startButton');
     buttonMsg.eventType = prism.core.prismConstants.REQUEST;
     this.send(buttonMsg);
-    setInterval(function(){
+    /*(setInterval(function(){
         console.log("getting infromation in control");
         var msg = new prism.core.event('event');
         msg.addParameter('opt','getTemp');
         msg.eventType = prism.core.prismConstants.REQUEST;
         this.send(msg);
-    }.bind(this) , 10000);
+    }.bind(this) , 10000);*/
     setInterval(function(){
         var msg = new prism.core.event('event');
         msg.addParameter('opt','getPPM');
