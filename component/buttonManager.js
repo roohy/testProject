@@ -21,7 +21,7 @@ ButtonManager.prototype.startListening=function(){
                 e.eventType = prism.core.prismConstants.REPLY;
                 this.send(e);
         }
-        },300);
+        }.bind(this),300);
     }
 };
 ButtonManager.prototype.stopListening = function(){
