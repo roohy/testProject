@@ -2,9 +2,12 @@
  * Created by Ruhollah on 7/13/2015.
  */
 //var List = ['Temprature
+
+
 Controller = function(){
     prism.core.abstractImplementation.call(this);
-    
+    this.vals = {'Temprature':'0'};
+    this.currentKey = 'Temprature';
 
 };
 Controller.prototype = Object.create(prism.core.abstractImplementation.prototype);
@@ -14,34 +17,48 @@ Controller.prototype.start = function(){
     buttonMsg.addParameter('opt','startButton');
     buttonMsg.eventType = prism.core.prismConstants.REQUEST;
     this.send(buttonMsg);
-    /*(setInterval(function(){
-        console.log("getting infromation in control");
+    (setInterval(function(){
+        //console.log("getting infromation in control");
+        
         var msg = new prism.core.event('event');
         msg.addParameter('opt','getTemp');
         msg.eventType = prism.core.prismConstants.REQUEST;
         this.send(msg);
-    }.bind(this) , 10000);*/
-    setInterval(function(){
+        //--------------------------------------------------------------------------------------------------------------------------------------------
+        
         var msg = new prism.core.event('event');
         msg.addParameter('opt','getPPM');
         msg.eventType = prism.core.prismConstants.REQUEST;
         this.send(msg);
+        //--------------------------------------------------------------------------------------------------------------------------------------------
+        
+        
     }.bind(this) , 10000);
 };
-
+Controller.prototype.print = function(){
+        e.addParameter('opt','print');
+        e.addParameter('type', this.currentKey);
+        e.addParameter('value', this.vals[this.currentKey]);
+        e.eventType =  prism.core.prismConstants.REQUEST;
+        this.send(e);
+    }
 
 Controller.prototype.handle = function(event){
     console.log(event);
     var opt = event.getParameter('opt');
     if( opt !== 'undefined' && opt == 'response' ){
         var e = new prism.core.event('request');
-        e.addParameter('opt','print');
-        e.addParameter('type', event.getParameter('type'));
-        e.addParameter('value', event.getParameter('value'));
-        e.eventType =  prism.core.prismConstants.REQUEST;
-        this.send(e);
+        var key = event.getParameter('type')
+        this.vals[key] = event.getParameter('value');
+        if(this.currentKey == key)
+            this.print();
+        
     }
     else if( opt !== 'undefined' && opt == 'clicked'){
-        console.log("clickeddd");
+        var len = Object.keys(this.vals).length;
+        this.currentKey = (this.currentKey+1)%len;
+        this.print();
+        
     }
 };
+    
