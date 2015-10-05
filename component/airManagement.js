@@ -17,7 +17,7 @@ AirManager.prototype.handle = function(event){
             //console.log("har har getting ppm");
             response.addParameter('opt','response');
             response.addParameter('type','CO PPM');
-            response.addParameter('value',this.sensor.getPPM());
+            response.addParameter('value',this.sensor.getPPM().toString());
             response.eventType = prism.core.prismConstants.REPLY;
             this.send(response);
         }
