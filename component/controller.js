@@ -17,7 +17,7 @@ Controller.prototype.start = function(){
     buttonMsg.addParameter('opt','startButton');
     buttonMsg.eventType = prism.core.prismConstants.REQUEST;
     this.send(buttonMsg);
-    (setInterval(function(){
+    setInterval(function(){
         //console.log("getting infromation in control");
         
         var msg = new prism.core.event('event');
