@@ -14,6 +14,7 @@ AirManager.prototype.handle = function(event){
     if ( opt !== 'undefined' ){
         var response = new prism.core.event('response');
         if( opt == 'getPPM'){
+            console.log("har har getting ppm");
             response.addParameter('opt','response');
             response.addParameter('type','CO PPM');
             response.addParameter('value',this.sensor.getPPM());
