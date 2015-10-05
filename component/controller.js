@@ -31,7 +31,7 @@ Controller.prototype.start = function(){
 
 
 Controller.prototype.handle = function(event){
-    console.log("handling in controller "+event);
+    console.log(event);
     var opt = event.getParameter('opt');
     if( opt !== 'undefined' && opt == 'response' ){
         var e = new prism.core.event('request');
