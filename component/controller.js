@@ -36,6 +36,7 @@ Controller.prototype.start = function(){
     }.bind(this) , 10000);
 };
 Controller.prototype.print = function(){
+        var e = new prism.core.event('request');
         e.addParameter('opt','print');
         e.addParameter('type', this.currentKey);
         e.addParameter('value', this.vals[this.currentKey]);
@@ -47,7 +48,6 @@ Controller.prototype.handle = function(event){
     console.log(event);
     var opt = event.getParameter('opt');
     if( opt !== 'undefined' && opt == 'response' ){
-        var e = new prism.core.event('request');
         var key = event.getParameter('type')
         this.vals[key] = event.getParameter('value');
         if(this.currentKey == key)
