@@ -34,6 +34,18 @@ Controller.prototype.start = function(){
         this.send(msg);
         //--------------------------------------------------------------------------------------------------------------------------------------------
         
+        var msg = new prism.core.event('event');
+        msg.addParameter('opt','getRaw');
+        msg.eventType = prism.core.prismConstants.REQUEST;
+        this.send(msg);
+        //----------------------------------------------------------------------------------------------------------------------------------------------
+        
+        
+        var msg = new prism.core.event('event');
+        msg.addParameter('opt','getText');
+        msg.eventType = prism.core.prismConstants.REQUEST;
+        this.send(msg);
+        //-------------------------------------------------------------------------------------------------------------------------------------------
         
     }.bind(this) , 10000);
 };

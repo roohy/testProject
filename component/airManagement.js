@@ -13,15 +13,40 @@ AirManager.prototype.handle = function(event){
     var opt = event.getParameter('opt');
     if ( opt !== 'undefined' ){
         var response = new prism.core.event('response');
+        response.eventType = prism.core.prismConstants.REPLY;
         if( opt == 'getPPM'){
             //console.log("har har getting ppm");
             response.addParameter('opt','response');
             response.addParameter('type','CO PPM');
             response.addParameter('value',this.sensor.getPPM().toString());
-            response.eventType = prism.core.prismConstants.REPLY;
-            this.send(response);
+            
         }
-        //else if( opt == 'getRaw'){
-        //}
+        else if( opt == 'getRaw'){
+            response.addParameter('opt','response');
+            response.addParameter('type','Raw Air');
+            response.addParameter('value',this.sensor.getSample().toString);
+            
+        }
+        else if( opt == 'getText'){
+            
+            response.addParameter('opt','response');
+            response.addParameter('type','textAir');
+            var raw = this.sensor.getSample();
+            var test;
+            if ( raw < 50 )
+                test = "Fresh Air";
+            else if( raw < 200)
+                test = "Normal Indoor Air";
+            else if (raw < 400)
+                test = "Low Pollution";
+            else if( raw < 600)
+                test = "High Pollution - Action Recommended";
+            else
+                test = "Very High Pollution - Take Action Immediately";
+
+            response.addParameter('value',test);
+        }
+        
+        this.send(response);
     }
 };
