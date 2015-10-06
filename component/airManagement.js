@@ -24,7 +24,7 @@ AirManager.prototype.handle = function(event){
         else if( opt == 'getRaw'){
             response.addParameter('opt','response');
             response.addParameter('type','Raw Air');
-            response.addParameter('value',this.sensor.getSample().toString);
+            response.addParameter('value',this.sensor.getSample().toString());
             
         }
         else if( opt == 'getText'){
