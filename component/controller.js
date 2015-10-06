@@ -8,6 +8,7 @@ Controller = function(){
     prism.core.abstractImplementation.call(this);
     this.vals = {'Temprature':'0'};
     this.currentKey = 'Temprature';
+    this.currentIndex = 0;
     console.log("controller initialized");
 
 };
@@ -58,7 +59,8 @@ Controller.prototype.handle = function(event){
     else if( opt !== 'undefined' && opt == 'clicked'){
         console.log("hahahaha  " + this.vals+ ":::"+ Object.keys(this.vals));
         var len = (Object.keys(this.vals)).length;
-        this.currentKey = (this.currentKey+1)%len;
+        this.currentIndex = (this.currentIndex+1)%len;
+        this.currentKey = Object.keys(this.vals)[this.currentIndex];
         this.print();
         
     }
