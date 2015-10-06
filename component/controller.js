@@ -57,7 +57,7 @@ Controller.prototype.handle = function(event){
     }
     else if( opt !== 'undefined' && opt == 'clicked'){
         console.log("hahahaha  " + this.vals+ ":::"+ Object.keys(this.vals));
-        var len = Object.keys(this.vals).length;
+        var len = (Object.keys(this.vals)).length;
         this.currentKey = (this.currentKey+1)%len;
         this.print();
         
