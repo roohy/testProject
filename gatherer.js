@@ -6,7 +6,7 @@ var ContextTypes = {
 
 var CGU = {};
 
-CGU.initialize = functio(){
+CGU.initialize = function(){
     console.log("Initializing the board");
     var mraa = require('mraa');
     var version = mraa.getVersion();
@@ -30,5 +30,8 @@ CGU.initialize = functio(){
     //---Air
     var upmTP401 = require('jsupm_gas');
     this.sensor = new upmTP401.TP401(AIR_PIN);
+    
+    //sound
+    vary
     
 };
