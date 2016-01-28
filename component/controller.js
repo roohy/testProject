@@ -10,39 +10,41 @@ Controller = function(){
     this.currentKey = 'Temprature';
     this.currentIndex = 0;
     console.log("controller initialized");
-
+    
+    //Different Values
+    this.
 };
 Controller.prototype = Object.create(prism.core.abstractImplementation.prototype);
 Controller.prototype.constructor = Controller;
 Controller.prototype.start = function(){
     var buttonMsg = new prism.core.event("Button");
-    buttonMsg.addParameter('opt','startButton');
+    buttonMsg.addParameter('opt',PRISM_PROJECT.contstants.requests.startButton);
     buttonMsg.eventType = prism.core.prismConstants.REQUEST;
     this.send(buttonMsg);
     setInterval(function(){
         //console.log("getting infromation in control");
         
         var msg = new prism.core.event('event');
-        msg.addParameter('opt','getTemp');
+        msg.addParameter('opt',PRISM_PROJECT.constants.requests.getTemp);
         msg.eventType = prism.core.prismConstants.REQUEST;
         this.send(msg);
         //--------------------------------------------------------------------------------------------------------------------------------------------
         
         var msg = new prism.core.event('event');
-        msg.addParameter('opt','getPPM');
+        msg.addParameter('opt',PRISM_PROJECT.constants.requests.getPPM);
         msg.eventType = prism.core.prismConstants.REQUEST;
         this.send(msg);
         //--------------------------------------------------------------------------------------------------------------------------------------------
         
         var msg = new prism.core.event('event');
-        msg.addParameter('opt','getRaw');
+        msg.addParameter('opt',PRISM_PROJECT.constants.requests.getRawAir);
         msg.eventType = prism.core.prismConstants.REQUEST;
         this.send(msg);
         //----------------------------------------------------------------------------------------------------------------------------------------------
         
         
         var msg = new prism.core.event('event');
-        msg.addParameter('opt','getText');
+        msg.addParameter('opt',PRISM_PROJECT.constants.requests.getAirDescription);
         msg.eventType = prism.core.prismConstants.REQUEST;
         this.send(msg);
         //-------------------------------------------------------------------------------------------------------------------------------------------

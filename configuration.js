@@ -19,3 +19,24 @@ PRISM_PROJECT.name = "The Architecture Name";
 PRISM_PROJECT.implementations = ['./component/server.js','./component/client.js','./component/tempratureManager.js','./component/controller.js','./component/LCDManager.js' , './component/buttonManager.js', './component/airManagement.js'];
 
 
+PRISM_PROJECT.constants = {};
+PRISM_PROJECT.constants.requests = {};
+PRISM_PROJECT.constants.requests.getTemp = "getTemp";
+PRISM_PROJECT.constants.requests.getRawAir = "getRawAir";
+PRISM_PROJECT.constants.requests.getPPM = "getPPM";
+PRISM_PROJECT.constants.requests.getAirDescription = "getText";
+PRISM_PROJECT.constants.requests.response = "response";
+PRISM_PROJECT.constants.requests.startButton = "startButton";
+
+PRISM_PROJECT.constants.context = {};
+PRISM_PROJECT.constants.responses = {};
+PRISM_PROJECT.constants.responses.temprature = "temprature";
+PRISM_PROJECT.constants.responses.rawAir = "rawAir";
+PRISM_PROJECT.constants.responses.ppm = "ppm";
+PRISM_PROJECT.constants..responses.AirDescirption = "airdes";
+PRISM_PROJECT.constants.responses.buttonClicked = "btnClicked";
+PRISM_PROJECT.constants.context['temprature'] = {  message:'Temprature'};
+PRISM_PROJECT.constants.context['rawAir'] = { message:'Raw Air Quality'};
+PRISM_PROJECT.constants.context['ppm'] = {message: "CO PPM"};
+PRISM_PROJECT.constants.context['airdes'] = {message: 'Air Descritopn'};
+
